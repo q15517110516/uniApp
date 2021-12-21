@@ -43,6 +43,7 @@ const config = {
     }
   },
   h5: {
+    esnextModules: ['@antmjs/vantui'],
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {
@@ -50,6 +51,10 @@ const config = {
         enable: true,
         config: {
         }
+      },
+      pxtransform: {
+        enable: true,
+        config: {},
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
