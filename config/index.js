@@ -43,7 +43,8 @@ const config = {
     }
   },
   h5: {
-    esnextModules: ['@antmjs/vantui'],
+    // esnextModules: ['@antmjs/vantui'],
+    esnextModules: ['taro-ui'],
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {
