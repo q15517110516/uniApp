@@ -2,6 +2,9 @@ export default {
   pages: [
     'pages/index/index',
     'pages/service/index',
+    'pages/addService/index',
+    'pages/message/index',
+    'pages/user/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -10,18 +13,40 @@ export default {
     navigationBarTextStyle: 'black'
   },
   tabBar: {
-    color: "#666",
-    selectedColor: "#b4282d",
+    color: "black",
+    selectedColor: "#1989fa",
     backgroundColor: "#fafafa",
     borderStyle: 'black',
     list: [
       {
         pagePath: "pages/index/index",
-        text: '家'
+        text: '首页',
+        iconPath: './images/home.png',
+        selectedIconPath: './images/home-selected.png'
       },
       {
         pagePath: "pages/service/index" ,
-        text: 'Service'
+        text: '服务',
+        iconPath: './images/service.png',
+        selectedIconPath: './images/service-selected.png'
+      },
+      {
+        pagePath: "pages/addService/index" ,
+        text: '',
+        iconPath: './images/add-circle-fill.png',
+        selectedIconPath: './images/add-circle-fill.png',
+      },
+      {
+        pagePath: "pages/message/index" ,
+        text: '消息',
+        iconPath: './images/message.png',
+        selectedIconPath: './images/message-selected.png'
+      },
+      {
+        pagePath: "pages/user/index" ,
+        text: '我的',
+        iconPath: './images/account.png',
+        selectedIconPath: './images/account-selected.png'
       }
     ]
   }
