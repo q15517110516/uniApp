@@ -1,15 +1,15 @@
 import { Component } from 'react';
 import { View } from '@tarojs/components';
-import './index.scss';
 
-class Index extends Component {
-
+class Service extends Component {
   render() {
     return (
-      <View className='index'>
+      <View>
+        Service
       </View>
-    )
+    );
   }
 }
 
-export default Index;
+export default Service;
+
