@@ -4,20 +4,10 @@ import './index.scss'
 
 export default class Addservice extends Component {
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   render () {
     return (
       <View className='addService'>
-        <Text>Hello world!</Text>
+        <Text>Add</Text>
       </View>
     )
   }

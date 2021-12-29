@@ -33,8 +33,8 @@ export default {
       {
         pagePath: "pages/addService/index" ,
         text: '',
-        iconPath: './images/add-circle-fill.png',
-        selectedIconPath: './images/add-circle-fill.png',
+        iconPath: './images/add.png',
+        selectedIconPath: './images/add.png',
       },
       {
         pagePath: "pages/message/index" ,
@@ -49,5 +49,6 @@ export default {
         selectedIconPath: './images/account-selected.png'
       }
     ]
-  }
+  },
+  usingComponents: {}
 }

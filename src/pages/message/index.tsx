@@ -4,20 +4,10 @@ import './index.scss'
 
 export default class Message extends Component {
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   render () {
     return (
       <View className='message'>
-        <Text>Hello world!</Text>
+        <Text>Message</Text>
       </View>
     )
   }
