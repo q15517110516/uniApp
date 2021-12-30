@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { View } from '@tarojs/components';
+import { View } from '../../images/housekeeping.png';
 import { Grid,
   GridItem
 } from "@antmjs/vantui";
@@ -12,7 +12,7 @@ const tabList = [
     service: [
       {
         text: '空调安装',
-        icon: 'homeO'
+        icon: ''
       },
       {
         text: '洗衣机安装',
@@ -20,6 +20,10 @@ const tabList = [
       },
       {
         text: '家具组装',
+        icon: 'homeO'
+      },
+      {
+        text: '其他家电',
         icon: 'homeO'
       }
     ],
@@ -33,12 +37,21 @@ const tabList = [
       },
       {
         text: '保姆',
-        icon: 'homeO'
+        icon: '../../images/housekeeping.png'
       },
       {
         text: '保洁',
         icon: 'homeO'
+      },
+      {
+        text: '擦窗户',
+        icon: 'homeO'
+      },
+      {
+        text: '擦玻璃',
+        icon: 'homeO'
       }
+
     ],
   },
   {
@@ -88,72 +101,29 @@ class Service extends Component {
 
   render() {
     return (
-      <AtTabs
-        current={this.state.current}
-        scroll
-        tabDirection='vertical'
-        tabList={[
-          { title: '标签页1' },
-          { title: '标签页2' },
-          { title: '标签页3' },
-          { title: '标签页4' },
-          { title: '标签页5' },
-          { title: '标签页6' },
-        ]}
-        onClick={this.handleClick.bind(this)}>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={0}>
-          <View >标签页一的内容</View>
-        </AtTabsPane>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={1}>
-          <View style='font-size:18px;text-align:center'>标签页二的内容</View>
-        </AtTabsPane>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={2}>
-          <View style='font-size:18px;text-align:center'>标签页三的内容</View>
-        </AtTabsPane>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={3}>
-          <View style='font-size:18px;text-align:center'>标签页四的内容</View>
-        </AtTabsPane>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={4}>
-          <View style='font-size:18px;text-align:center'>标签页五的内容</View>
-        </AtTabsPane>
-        <AtTabsPane tabDirection='vertical' current={this.state.current} index={5}>
-          <View style='font-size:18px;text-align:center'>标签页六的内容</View>
-        </AtTabsPane>
-      </AtTabs>
-
-
-        // <AtTabs current={this.state.current}
-        //         tabDirection='vertical'
-        //         height='200px%'
-        //         scroll
-        //         tabList={[
-        //           { title: '标签页1' },
-        //           { title: '标签页2' },
-        //           { title: '标签页3' },
-        //           { title: '标签页4' },
-        //           { title: '标签页5' },
-        //           { title: '标签页6' },
-        //         ]}
-        //         onClick={this.handleClick.bind(this)}
-        // >
-        //   {tabList.map((item, index) => (
-        //       <AtTabsPane current={this.state.current}
-        //                   index={index}
-        //                   key={index}>
-        //         <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页一的内容</View>
-        //         <Grid columnNum={3} >
-        //           {item.service.map((value, i) => (
-        //             <GridItem icon={value.icon}
-        //                       text={value.text}
-        //                       key={i}
-        //
-        //
-        //             />
-        //           ))}
-        //         </Grid>
-        //       </AtTabsPane>
-        //   ))}
-        // </AtTabs>
+        <AtTabs current={this.state.current}
+                tabDirection='vertical'
+                height='500px'
+                scroll
+                tabList={tabList}
+                onClick={this.handleClick.bind(this)}
+        >
+          {tabList.map((item, index) => (
+              <AtTabsPane current={this.state.current}
+                          tabDirection='vertical'
+                          index={index}
+                          key={index}>
+                  <Grid columnNum={3} >
+                    {item.service.map((value, i) => (
+                      <GridItem icon={value.icon}
+                                text={value.text}
+                                key={i}
+                      />
+                    ))}
+                  </Grid>
+              </AtTabsPane>
+          ))}
+        </AtTabs>
     );
   }
 }
