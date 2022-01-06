@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { View } from '../../images/housekeeping.png';
 import { Grid,
-  GridItem
+  GridItem,
+  Image
 } from "@antmjs/vantui";
 import { AtTabs, AtTabsPane } from 'taro-ui';
+import { Text } from '@tarojs/components';
 import './index.scss';
 
 const tabList = [
@@ -12,19 +13,19 @@ const tabList = [
     service: [
       {
         text: '空调安装',
-        icon: ''
+        icon: '../../images/air-conditioning.png'
       },
       {
         text: '洗衣机安装',
-        icon: 'homeO'
+        icon: '../../images/washing-machine.png'
       },
       {
         text: '家具组装',
-        icon: 'homeO'
+        icon: '../../images/furniture.png'
       },
       {
         text: '其他家电',
-        icon: 'homeO'
+        icon: '../../images/electric-appliance.png'
       }
     ],
   },
@@ -33,7 +34,7 @@ const tabList = [
     service: [
       {
         text: '家电维修',
-        icon: 'homeO'
+        icon: '../../images/washing-plate.png'
       },
       {
         text: '保姆',
@@ -41,15 +42,19 @@ const tabList = [
       },
       {
         text: '保洁',
-        icon: 'homeO'
+        icon: '../../images/cleaner.png'
       },
       {
         text: '擦窗户',
-        icon: 'homeO'
+        icon: '../../images/cleaning-spray.png'
       },
       {
-        text: '擦玻璃',
-        icon: 'homeO'
+        text: '钟点工',
+        icon: '../../images/washing-plate.png'
+      },
+      {
+        text: '墙面粉刷',
+        icon: '../../images/paint-roller.png'
       }
 
     ],
@@ -59,11 +64,11 @@ const tabList = [
     service: [
       {
         text: '搬家服务',
-        icon: 'homeO'
+        icon: '../../images/relocation.png'
       },
       {
         text: '旧家具回收',
-        icon: 'homeO'
+        icon: '../../images/recycle.png'
       }
     ],
   },
@@ -72,20 +77,19 @@ const tabList = [
     service: [
       {
         text: '水电工',
-        icon: 'homeO'
+        icon: '../../images/electrician.png'
       },
       {
         text: '泥瓦工',
-        icon: 'homeO'
+        icon: '../../images/builder.png'
       },
       {
         text: '木工',
-        icon: 'homeO'
+        icon: '../../images/carpenter.png'
       }
     ]
   },
 ]
-
 
 class Service extends Component {
 
@@ -103,7 +107,7 @@ class Service extends Component {
     return (
         <AtTabs current={this.state.current}
                 tabDirection='vertical'
-                height='500px'
+                height='100%'
                 scroll
                 tabList={tabList}
                 onClick={this.handleClick.bind(this)}
@@ -112,13 +116,17 @@ class Service extends Component {
               <AtTabsPane current={this.state.current}
                           tabDirection='vertical'
                           index={index}
-                          key={index}>
-                  <Grid columnNum={3} >
+                          key={index}
+              >
+                  <Grid columnNum={3}>
                     {item.service.map((value, i) => (
-                      <GridItem icon={value.icon}
-                                text={value.text}
-                                key={i}
-                      />
+                      <GridItem key={i}>
+                        <Image src={`${value.icon}`}
+                               fit="cover"
+                               style={{width: '100%', height: '100%'}}
+                        />
+                        <Text>{value.text}</Text>
+                      </GridItem>
                     ))}
                   </Grid>
               </AtTabsPane>
